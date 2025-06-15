@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/components/coustom_textField.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -7,6 +9,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 234, 231, 231),
       body: Column(
         children: [
           Stack(
@@ -16,20 +19,21 @@ class LoginScreen extends StatelessWidget {
                 width: size.width,
                 fit: BoxFit.fitWidth,
               ),
-              const Center(
+              Center(
                 child: Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 50,
                     ),
                     Text(
                       "Login",
-                      style: TextStyle(
+                      //use googel font
+                      style: GoogleFonts.poppins(
                         fontSize: 25,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    Text(
+                    const Text(
                       "Access Acount",
                       style: TextStyle(
                         fontSize: 18,
@@ -39,6 +43,92 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
               )
+            ],
+          ),
+          Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        elevation: 3,
+                        backgroundColor: Colors.white,
+                        padding: const EdgeInsets.all(10),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        )),
+                    onPressed: () {},
+                    child: Image.asset(
+                      "assets/google.png",
+                      width: 40,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        elevation: 3,
+                        backgroundColor: Colors.white,
+                        padding: const EdgeInsets.all(10),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        )),
+                    onPressed: () {},
+                    child: Image.asset(
+                      "assets/Facebook.png",
+                      width: 40,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text(
+                "or Login with Email",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Email",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    CustomTextField(),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Password",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    CustomTextField(),
+                  ],
+                ),
+              ),
             ],
           )
         ],
