@@ -27,12 +27,38 @@ class _SplashScreenState extends State<SplashScreen> {
         child: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "FOOD",
-              style: TextStyle(
-                  fontSize: 50,
-                  fontWeight: FontWeight.w700,
-                  color: Color(0xffFFD200)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "F",
+                  style: TextStyle(
+                      fontSize: 50,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xff000000)),
+                ),
+                Text(
+                  "O",
+                  style: TextStyle(
+                      fontSize: 50,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xffFFD200)),
+                ),
+                Text(
+                  "O",
+                  style: TextStyle(
+                      fontSize: 50,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xffFFD200)),
+                ),
+                Text(
+                  "D",
+                  style: TextStyle(
+                      fontSize: 50,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xff000000)),
+                ),
+              ],
             ),
             Text(
               "No Waiting for Food",

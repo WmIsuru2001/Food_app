@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:food_app/screens/login_screen/login_screen.dart';
 
 class GettingStarted extends StatefulWidget {
   const GettingStarted({super.key});
@@ -41,6 +42,7 @@ class _GettingStartedState extends State<GettingStarted> {
           CarouselSlider(
             options: CarouselOptions(
                 height: size.height / 2,
+                viewportFraction: 0.9, //use to chage slide width
                 autoPlay: false,
                 onPageChanged: (index, reason) {
                   setState(() {
@@ -81,13 +83,13 @@ class _GettingStartedState extends State<GettingStarted> {
           ),
           Stack(
             children: [
-              Container(
+              Image.asset(
+                "assets/bottom1.png",
                 width: size.width,
-                height: 180,
-                color: const Color(0xffFFD200),
+                fit: BoxFit.fitWidth,
               ),
               Positioned(
-                bottom: 65,
+                bottom: 55,
                 right: 50,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -110,7 +112,13 @@ class _GettingStartedState extends State<GettingStarted> {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LoginScreen(),
+                            ));
+                      },
                       child: const Text(
                         "Skip",
                         style: TextStyle(
@@ -154,7 +162,7 @@ class SliderItems extends StatelessWidget {
         Text(
           text1,
           style: const TextStyle(
-            fontSize: 22,
+            fontSize: 30,
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -165,7 +173,7 @@ class SliderItems extends StatelessWidget {
           text2,
           textAlign: TextAlign.center,
           style: const TextStyle(
-            fontSize: 14,
+            fontSize: 18,
             fontWeight: FontWeight.w400,
           ),
         ),
